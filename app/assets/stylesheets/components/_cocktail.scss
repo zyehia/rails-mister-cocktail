@@ -2,6 +2,14 @@
   background-color: $light-gray;
   display:flex;
   margin-top: 20px;
+  height: 420px;
+}
+
+.cocktail-show-card-description-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  flex-grow: 1;
 }
 
 .potion-img {
