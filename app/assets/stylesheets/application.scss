@@ -10,11 +10,18 @@
 
 // Your CSS partials
 @import "components/index";
+@import "components/cocktail";
 @import "cocktails/index";
+@import "cocktails/show";
 
 body {
   position:relative;
   background-color: #0A0B0D;
   color: $orange;
   height: 100vh;
+}
+
+h1 {
+  font-size: 72px;
+  text-shadow: 1px 1px 1px rgba(240,240,240,0.5);
 }
