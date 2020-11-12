@@ -10,6 +10,11 @@
 
 // Your CSS partials
 @import "components/index";
-@import "pages/index";
+@import "cocktails/index";
 
-
+body {
+  position:relative;
+  background-color: #0A0B0D;
+  color: $orange;
+  height: 100vh;
+}

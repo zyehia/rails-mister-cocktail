@@ -1,10 +1,16 @@
-<h1>Cocktails#index</h1>
-<p>Find me in app/views/cocktails/index.html.erb</p>
-
-<div class="cards-grid">
-  <% @cocktails.each do |cocktail| %>
-      <div class="card">
-        <%= cocktail.name %>
+<h1 class="mb-4"><i class="fas fa-feather-alt"></i> <strong>Ye Olde Potion Shop</strong></h1>
+<div class="d-flex justify-content-center">
+  <div class="cards-grid mt-5">
+    <% @cocktails.each do |cocktail| %>
+      <div class="card" style="width: 18rem;">
+        <%= image_tag "cocktails/#{cocktail.image}", class: "card-img-top", style: "height: 200px;"%>
+        <div class="card-body p-3">
+          <h2 class="card-title"><strong><%= cocktail.name %></strong></h2>
+          <p class="card-text" style="color:black;">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <a href="#" class="btn btn-danger">Discover More</a>
+        </div>
       </div>
-  <% end %>
+    <% end %>
+  </div>
 </div>
+<%= image_tag "cocktails/smoke.png", style: "position: absolute; left:0; bottom:0;", width: "500px" %>
