@@ -1,8 +1,25 @@
 .cocktail-show-card {
   background-color: $light-gray;
+  display:flex;
+  margin-top: 20px;
+}
+
+.potion-img {
+  background-size: cover;
+  background-position: center;
+  width: 30%;
+  margin-right: 20px;
 }
 
 .cocktail-show-card p {
   font-size: 24px;
   color: black;
+}
+
+.cocktail-show-card h2 {
+  font-size: 45px;
+}
+
+.cocktail-show-card .btn {
+  font-size: 27px;
 }

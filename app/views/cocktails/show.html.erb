@@ -1,14 +1,13 @@
 <h1><%= @cocktail.name  %></h1>
 
 <div class="cocktail-show-card">
-  <div class="row">
-    <div class="col-xs-12 col-md-4">
-      <%= image_tag "cocktails/#{@cocktail.image}", class: "w-100"%>
-    </div>
-    <div class="col-xs-12 col-md-8 d-flex flex-column justify-content-between p-5">
-      <h2><%= @cocktail.name %></h2>
-      <p>Rating: ⭐⭐⭐⭐⭐</p>
-      <p>Description</p>
-    </div>
+  <% asset_url = asset_url "cocktails/#{@cocktail.image}" %>
+  <% url_text =  %>
+  <%= content_tag :div, "", class: "potion-img", style: 'background-image: url("' + asset_url + '");' %>
+  <div class="p-4">
+    <h2><%= @cocktail.name %></h2>
+    <p><%= "⭐" * @cocktail.rating %></p>
+    <p><%= @cocktail.description %></p>
+    <div class="btn btn-danger">Add to Cart</div>
   </div>
 </div>
