@@ -10,11 +10,11 @@ Cocktail.destroy_all
 Ingredient.destroy_all
 Dose.destroy_all
 
-c1 = Cocktail.create(name: "Speed Potion", image: "speed.jpg")
-c2 = Cocktail.create(name: "Strength Potion", image: "strength.jpg")
-c3 = Cocktail.create(name: "Invisibility Potion", image: "invisibility.jpg")
-c4 = Cocktail.create(name: "Wealth Potion", image: "wealth.jpg")
-c5 = Cocktail.create(name: "Knowlege Potion", image: "knowledge.jpg")
+c1 = Cocktail.create(name: "Speed Potion", image: "speed.jpg", description: "Never be late again")
+c2 = Cocktail.create(name: "Strength Potion", image: "strength.jpg", description: "Be able to protect the ones you love")
+c3 = Cocktail.create(name: "Invisibility Potion", image: "invisibility.jpg", description: "Nothing is off-limits")
+c4 = Cocktail.create(name: "Wealth Potion", image: "wealth.jpg", description: "You are one sip from having all you could ever imagine")
+c5 = Cocktail.create(name: "Knowlege Potion", image: "knowledge.jpg", description: "Refinement and class are just one sip away")
 
 i1 = Ingredient.create(name: "panthers blood")
 i2 = Ingredient.create(name: "unicorn hoof")
