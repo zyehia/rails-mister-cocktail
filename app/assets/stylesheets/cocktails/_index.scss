@@ -1,5 +1,23 @@
-.cards-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 24px;
+@media (min-width: 480px) {
+  .cards-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 24px;
+  }
+}
+
+@media (min-width: 720px) {
+  .cards-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 24px;
+  }
+}
+
+@media (min-width: 1000px) {
+  .cards-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 24px;
+  }
 }
