@@ -1,4 +1,7 @@
-<h1 class="mb-4"><i class="fas fa-feather-alt"></i> <strong>Ye Olde Potion Shop</strong></h1>
+<header class="d-flex justify-content-between align-items-center">
+  <h1 class="mb-4"><i class="fas fa-feather-alt"></i> <strong>Ye Olde Potion Shop</strong></h1>
+  <%= link_to "Blend Your Own Potion", new_cocktail_path, class: "btn btn-danger"%>
+</header>
 <div class="d-flex justify-content-center">
   <div class="cards-grid mt-5">
     <% @cocktails.each do |cocktail| %>
@@ -14,12 +17,3 @@
     <% end %>
   </div>
 </div>
-
-<h2 class="mt-5">Blend Your Own</h2>
-<%= simple_form_for(@blank_cocktail) do |f| %>
-  <%= f.input :name %>
-  <%= f.input :description %>
-  <%= f.input :ingredients, collection: Ingredient.all, input_html: { multiple: true }  %>
-  <%= f.input :photo, as: :file %>
-  <%= f.submit class:"btn btn-danger" %>
-<% end %>

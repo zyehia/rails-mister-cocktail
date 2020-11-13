@@ -1,9 +1,7 @@
 <h1><%= @cocktail.name  %></h1>
 
 <div class="cocktail-show-card">
-  <% asset_url = asset_url "cocktails/#{@cocktail.image}" %>
-  <% url_text =  %>
-  <%= content_tag :div, "", class: "potion-img", style: 'background-image: url("' + asset_url + '");' %>
+  <%= content_tag :div, "", class: "potion-img", style: "background-image: url(#{cl_image_path @cocktail.photo.key});" %>
   <div class="p-4">
     <h2><%= @cocktail.name %></h2>
     <p><%= "⭐" * @cocktail.rating %></p>

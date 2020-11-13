@@ -9,17 +9,27 @@ class CocktailsController < ApplicationController
     @doses = Dose.where(cocktail_id: @cocktail.id)
   end
 
-  def create 
-    p strong_params
-    cocktail = Cocktail.new(strong_params)
-    cocktail.image="knowledge.jpg"
-    cocktail.save
-    ingredient_ids = params[:cocktail][:ingredients].reject {|i| i.empty?}
-    ingredient_ids.each do |ingredient|
-      Dose.create(ingredient_id: ingredient.to_i, cocktail_id: cocktail.id, description: "You still need to fill out the unit")
-    end
+  def new 
+    @cocktail = Cocktail.new
+  end
 
-    redirect_to cocktails_path
+  def create 
+    @cocktail = Cocktail.new(strong_params)
+    if @cocktail.save
+      ingredients = [ params[:ingredient1], params[:ingredient2], params[:ingredient3] ]
+      amounts = [ params[:ingredient1_amount], params[:ingredient2_amount], params[:ingredient3_amount] ]
+      pairings = ingredients.zip(amounts)
+
+      pairings.each do |ingredient_name, amount|
+        dose = Dose.new(ingredient: Ingredient.where(name:ingredient_name).first, cocktail: @cocktail, description: amount)
+        render :new unless dose.save
+        return
+      end
+
+      redirect_to cocktails_path
+    else
+      render :new
+    end
   end
 
   def strong_params
