@@ -5,17 +5,48 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require 'open-uri'
 
 Cocktail.destroy_all
 Ingredient.destroy_all
 Dose.destroy_all
 
-c1 = Cocktail.create(name: "Speed Potion", image: "speed.jpg", description: "Never be late again")
-c2 = Cocktail.create(name: "Strength Potion", image: "strength.jpg", description: "Always be able to protect the ones you love")
-c3 = Cocktail.create(name: "Invisibility Potion", image: "invisibility.jpg", description: "Nothing will ever be off-limits again")
-c4 = Cocktail.create(name: "Wealth Potion", image: "wealth.jpg", description: "You are one sip away from having all you desire")
-c5 = Cocktail.create(name: "Love Potion", image: "love.jpg", description: "Get ready to live happilly ever after")
-c6 = Cocktail.create(name: "Knowledge Potion", image: "knowledge.jpg", description: "Refinement and class are just one sip away")
+c1 = Cocktail.new(name: "Speed Potion", description: "Never be late again")
+c1.photo.attach(io: File.open(URI.open("https://res.cloudinary.com/dsogzo1mn/image/upload/v1605284815/potions/speed_zeu41i.jpg")), 
+                filename: "speed_potion.jpg", 
+                content_type: "image/jpg")
+c1.save
+
+c2 = Cocktail.new(name: "Strength Potion", description: "Always be able to protect the ones you love")
+c2.photo.attach(io: File.open(URI.open("https://res.cloudinary.com/dsogzo1mn/image/upload/v1605284815/potions/strength_qjxawm.jpg")), 
+                filename: "strength_potion.jpg", 
+                content_type: "image/jpg")
+c2.save
+
+c3 = Cocktail.new(name: "Invisibility Potion", description: "Nothing will ever be off-limits again")
+c3.photo.attach(io: File.open(URI.open("https://res.cloudinary.com/dsogzo1mn/image/upload/v1605284815/potions/invisibility_pv0gaq.jpg")), 
+                filename: "invisibility_potion.jpg", 
+                content_type: "image/jpg")
+c3.save
+
+c4 = Cocktail.new(name: "Wealth Potion", description: "You are one sip away from having all you desire")
+c4.photo.attach(io: File.open(URI.open("https://res.cloudinary.com/dsogzo1mn/image/upload/v1605284815/potions/wealth_xtfbl5.jpg")), 
+                filename: "wealth_potion.jpg", 
+                content_type: "image/jpg")
+c4.save
+
+c5 = Cocktail.new(name: "Love Potion", description: "Get ready to live happily ever after")
+c5.photo.attach(io: File.open(URI.open("https://res.cloudinary.com/dsogzo1mn/image/upload/v1605284815/potions/love_zswy6b.jpg")), 
+                filename: "love_potion.jpg",
+
+                content_type: "image/jpg")
+c5.save
+
+c6 = Cocktail.new(name: "Knowledge Potion", description: "Refinement and class are just one sip away")
+c6.photo.attach(io: File.open(URI.open("https://res.cloudinary.com/dsogzo1mn/image/upload/v1605284815/potions/knowledge_mvkjis.jpg")), 
+                filename: "knowledge_potion.jpg", 
+                content_type: "image/jpg")
+c6.save
 
 i1 = Ingredient.create(name: "Panthers blood")
 i2 = Ingredient.create(name: "Unicorn hoof")
