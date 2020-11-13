@@ -23,7 +23,8 @@
     background-size: cover;
     background-position: center;
     @media (min-width: 0px) {
-      height: 250px;
+      min-height: 250px;
+      height: 100%;
     }
 
     @media (min-width: 768px) {
@@ -34,7 +35,6 @@
   div:nth-child(2) {
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
     flex-grow: 1;
   }
 
