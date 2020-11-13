@@ -15,18 +15,23 @@ class CocktailsController < ApplicationController
 
   def create 
     @cocktail = Cocktail.new(strong_params)
-    if @cocktail.save
+    if @cocktail.valid?
       ingredients = [ params[:ingredient1], params[:ingredient2], params[:ingredient3] ]
       amounts = [ params[:ingredient1_amount], params[:ingredient2_amount], params[:ingredient3_amount] ]
       pairings = ingredients.zip(amounts)
 
+      doses = []
+
       pairings.each do |ingredient_name, amount|
-        dose = Dose.new(ingredient: Ingredient.where(name:ingredient_name).first, cocktail: @cocktail, description: amount)
-        render :new unless dose.save
-        return
+        doses << Dose.new(ingredient: Ingredient.where(name:ingredient_name).first, cocktail: @cocktail, description: amount)
       end
 
-      redirect_to cocktails_path
+      if doses.all? { |dose| dose.valid? }
+        doses.each { |dose| dose.save }
+        redirect_to cocktails_path
+      else
+        render :new
+      end
     else
       render :new
     end
