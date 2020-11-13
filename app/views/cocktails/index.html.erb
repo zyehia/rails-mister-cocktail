@@ -3,9 +3,9 @@
   <%= link_to "Blend Your Own Potion", new_cocktail_path, class: "btn btn-danger"%>
 </header>
 <div class="d-flex justify-content-center">
-  <div class="cards-grid mt-5">
+  <div class="cards-grid my-5">
     <% @cocktails.each do |cocktail| %>
-      <div class="card" style="width: 18rem;">
+      <div class="card">
         <%= cl_image_tag cocktail.photo.key, class: "card-img-top", style: "height: 200px;"%>
         <div class="card-body p-3 d-flex flex-column justify-content-between">
           <h2 class="card-title"><strong><%= cocktail.name %></strong></h2>
