@@ -14,3 +14,12 @@
     <% end %>
   </div>
 </div>
+
+<h2 class="mt-5">Blend Your Own</h2>
+<%= simple_form_for(@blank_cocktail) do |f| %>
+  <%= f.input :name %>
+  <%= f.input :description %>
+  <%= f.input :ingredients, collection: Ingredient.all, input_html: { multiple: true }  %>
+  <%= f.input :photo, as: :file %>
+  <%= f.submit class:"btn btn-danger" %>
+<% end %>
